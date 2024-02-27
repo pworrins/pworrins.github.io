@@ -5,6 +5,7 @@
 
 /* Misalkan kita menerapkan animasi ke latar belakang body */
 body {
+  margin:auto;
   animation-name: example;
   animation-duration: 8s;
 }
