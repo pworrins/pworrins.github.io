@@ -1,256 +1,624 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitri Salwa</title>
-    <link rel="stylesheet" href="css/style.css">  
-    <link rel="icon" href="img/bogo.png" type="image/gif" />
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/logo.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Portopolio Fitri Salwa</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h4><img src="img/bogo.png" class="image"></h4>
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#kemampuan">Skill</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#video">Video</a></li>
-                <li><a href="#maps">Maps</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" style="padding-top: 100px;">
-        <div class="container">
-            <h2>Home</h2>
-            <!-- Menambahkan foto -->
-            <div class="img "> 
-                <img src="img/back.jpg" >
+  <!-- header section strats -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            UZ
+          </span>
+        </a>
+        <div class="" id="">
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+
+  <!-- slider section -->
+  <section class="slider_section position-relative">
+    <div class="slider_bg_box">
+      <img src="images/awaa.jpg" alt="">
+    </div>
+    <div class="slider_bg"></div>
+    <div class="container">
+      <div class="col-md-9 col-lg-8">
+        <div class="detail-box">
+          <h1>
+            Fitri 
+            <br> Salwa
+          </h1>
+          <p>
+            Hidup hanya sebentar, jangan habiskan waktumu untuk berkeluh kesah
+          </p>
+          <div>
+            <a href="lesson.html" class="slider-link">
+              learn more
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end slider section -->
+
+  <!-- shop section -->
+
+  <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Gallery
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/pp1.JPG" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Self
+                </h6>
+                <h6>
+                  Bandung
+                  <span>
+                    2023
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  FS
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/p2.JPG" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  UCE
+                </h6>
+                <h6>
+                  Bandung
+                  <span>
+                    2023
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  HI
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/p3.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  PKKMB
+                </h6>
+                <h6>
+                  Polban
+                  <span>
+                    2023
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  LKU
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/p4.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  PPKMb
+                </h6>
+                <h6>
+                  Pendopo
+                  <span>
+                    2023
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  KLU
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/p5.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Rain
+                </h6>
+                <h6>
+                  CLK
+                  <span>
+                    2022
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  YUL
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/p6.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Sunset
+                </h6>
+                <h6>
+                  Bandung
+                  <span>
+                    2023
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  BNF
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/p7.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Ia
+                </h6>
+                <h6>
+                  Secapa
+                  <span>
+                    2023
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  AW
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/p8.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Sawah
+                </h6>
+                <h6>
+                  Bandung
+                  <span>
+                    2020
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  sw
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end shop section -->
+
+  <!-- about section -->
+
+  <section class="about_section  ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="images/awa.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Me
+              </h2>
+            </div>
+            <p>
+              Hai Kenali nama aku fitri salwa, bisa dipanggil awa, aku dari kelas 1A-D4 Teknik informatika!! Yu kepoin lebih lanjut Tentang aku 
+            </p>
+            <a href="about.html">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- offer section -->
+
+  <section class="offer_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7 px-0">
+          <div class="box offer-box1">
+            <img src="images/JAVA.png" alt="">
+            <div class="detail-box">
+              <h2>
+                Upto 60% 
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 px-0">
+          <div class="box offer-box2">
+            <img src="images/C-Programming-tutorial-for-beginners-banner.png" alt="">
+            <div class="detail-box">
+              <h2>
+                Upto 60% 
+              </h2>
+            </div>
+          </div>
+          <div class="box offer-box3">
+            <img src="images/HTML.png" alt="">
+            <div class="detail-box">
+              <h2>
+                Upto 60% 
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end offer section -->
+
+  <!-- blog section -->
+
+  <section class="blog_section ">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Latest From Awards
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/s1.jpg" alt="">
+              <h4 class="blog_date">
+                10 <br>
+                Juni
+              </h4>
             </div>
             <div class="detail-box">
-                <h1>
-                  Fitri 
-                  <br> Salwa
-                </h1>
-                <p>
-                  Hidup hanya sebentar, jangan habiskan waktumu untuk berkeluh kesah
-                </p>
-                <div>
-         </div> 
-        </div>
-    </section>
-    <section id="About">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <div class="span">
-                <table>
-                    <tr>
-                        <th colspan="2">Profil Diri</th>
-                    </tr>
-                    <tr>
-                        <td>Nama</td>
-                        <td>Fitri Salwa</td>
-                    </tr>
-                    <tr>
-                        <td>Tempat,Tanggal Lahir</td>
-                        <td>Bandung, 14 November 2005</td>
-                    </tr>
-                    <tr>
-                        <td>Jenis Kelamin</td>
-                        <td>Perempuan</td>
-                    </tr>
-                    <tr>
-                        <td>Usia</td>
-                        <td>18 tahun</td>
-                    </tr>
-                    <tr>
-                        <td>Motto</td>
-                        <td>Berpikir bahwa setiap hari adalah kesempatan untuk belajar menunjukkan pentingnya pendekatan yang terus-menerus terhadap pembelajaran sepanjang hidup. Tidak peduli seberapa besar atau seberapa kecil pengetahuan yang diperoleh, ada selalu sesuatu yang bisa dipelajari.</td>
-                    </tr>
-                    <tr>
-                        <td>Domisili</td>
-                        <td>Ciwaruga</td>
-                    </tr>
-                </table>
+              <h5>
+                Lomba Kompetensi Siswa Tingkat Kab
+              </h5>
+              <p>
+                alhamdulilah saya menjuari perlombaan IT Software Solution For Bussines
+              </p>
+              <a href="">
+                Read More
+              </a>
             </div>
+          </div>
         </div>
-    </section>
-
-    <section id="hobi">
-        <div class="container">
-            <h2>Hobi</h2>
-            <div class="img" >
-                <img src="img/DRAKOR.jpeg">
-
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/s2.jpg" alt="">
+              <h4 class="blog_date">
+                23 <br>
+                July
+              </h4>
             </div>
-            <div class="span">
-                <span> Seperti halnya menonton film atau serial TV lainnya, menonton drakor juga 
+            <div class="detail-box">
+              <h5>
+                Lomba Kompetensi Siswa Tingkat Provisinsi
+              </h5>
+              <p>
+                Alhamdulilah saya menjadi finalis kembali untuk mengikuti lomba IT Software Solution for Businnes
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end blog section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Hobi
+        </h2>
+      </div>
+      <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-11 col-lg-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="images/drakorr.png" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <div class="name">
+                      <h6>
+                        Menonton Drakor
+                      </h6>
+                    </div>
+                    <p>
+                      Seperti halnya menonton film atau serial TV lainnya, menonton drakor juga 
                     merupakan cara untuk menghibur diri dan mengurangi stres dari kehidupan sehari-hari. 
-                    Cerita yang menghibur dan menyenangkan dapat menjadi pelarian yang menyegarkan dari rutinitas harian.</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="kemampuan">
-        <div class="container">
-            <h2>Kemampuan Teknis</h2>
-            <article id="kemampuanTeknis">
-                <div class="teknis">
-                  <img src="img/C.jpeg" alt="c" />
-                  <div class="text">
-                    <h4>Pemrograman C</h4>
-                    <span>60%</span> <!-- Persentase disini -->
+                    Cerita yang menghibur dan menyenangkan dapat menjadi pelarian yang menyegarkan dari rutinitas harian.
+                    </p>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="teknis">
-                  <img src="img/JAVA.png" alt="java" />
-                  <div class="text">
-                    <h4>Pemrograman Java</h4>
-                    <span>60%</span> <!-- Persentase disini -->
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-11 col-lg-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="images/nyanyi.jpeg" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <div class="name">
+                      <h6>
+                        Bernyanyi
+                      </h6>
+                    </div>
+                    <p>
+                      Bernyanyi dapat menjadi saluran untuk melepaskan emosi. Baik itu kesedihan,
+                       kegembiraan, kekecewaan, atau kegembiraan, melalui lagu seseorang dapat 
+                       mengungkapkan dan menghadapi emosi 
+                    </p>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="teknis">
-                    <img src="img/LARAVEL.png" alt="laravel" />
-                    <div class="text">
-                        <h4>API Laravel</h4>
-                        <span>40%</span> <!-- Persentase disini -->
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-11 col-lg-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="images/photo.jpg" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <div class="name">
+                      <h6>
+                        Memotret
+                      </h6>
                     </div>
+                    <p>
+                      merekam momen-momen penting dalam hidup kita, seperti pesta ulang tahun, liburan bersama keluarga, 
+                      perjalanan, dan acara penting lainnya. Foto-foto ini menjadi kenangan berharga yang dapat diabadikan 
+                      dan dikenang selamanya.
+                    </p>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
                 </div>
-                <div class="teknis">
-                    <img src="img/HTML.png" alt="html/css/js" />
-                    <div class="text">
-                        <h4>HTML/CSS/JS</h4>
-                        <span>60%</span> <!-- Persentase disini -->
-                    </div>
-                </div>
-                <div class="teknis">
-                    <img src="img/OFFICE.png" alt="" />
-                    <div class="text">
-                        <h4>Ms Office</h4>
-                        <span>60%</span> <!-- Persentase disini -->
-                    </div>
-                </div>
-              </article>
-    </section>
-
-    <section id="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="position-galery">
-                <div class="gallery">
-                    <a target="_blank" href="img/s1.jpg">
-                    <img src="img/s1.jpg" alt="Cinque Terre" width="600" height="400" style="border-radius: 20px;">
-                    </a>
-                </div>
-                
-                <div class="gallery">
-                    <a target="_blank" href="img/s2.jpg">
-                    <img src="img/s2.jpg" alt="Forest" width="600" height="400 " style="border-radius: 20px;">
-                    </a>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-
-    
-    <section id="video">
-        <div class="container">
-            <h2>Video</h2>
-            <div class="container-video">
-                <iframe  src="https://www.youtube.com/embed/2rTvyE0wna4?si=5NIXKuhF82iS8HVL"></iframe>
-            </div>            
-            <span class="span" style="font-style: italic;"> Lesson Learn</span>
-            <ul>
-                <li>
-                    <p>Membuat sebuah website memberikan pengalaman praktis dalam menerapkan pengetahuan yang telah dipelajari, baik dalam hal pemrograman web, desain, maupun manajemen proyek.</p>
-                </li>
-                <li>
-                    <p>Proyek membuat website mengajarkan pentingnya pengelolaan waktu. Menyelesaikan tugas-tugas yang diperlukan untuk mengembangkan website membutuhkan perencanaan dan disiplin waktu yang baik.</p>
-                </li>
-                <li>
-                    <p>Kadang-kadang, membuat website bisa menjadi tantangan yang membutuhkan kesabaran dan ketelitian. Perbaikan bug, penyesuaian desain, dan pengoptimalan kinerja mungkin memerlukan waktu dan perhatian ekstra.</p>
-                </li>
-            </ul>
-            <span class="span" style="font-style: italic;"> Harapan</span>
-            <ul>
-                <li>
-                    <p>Harapan saya selama berkuliah adalah mendapatkan pemahaman yang mendalam dalam bidang yang saya minati, baik itu dalam hal pemrograman, desain, maupun manajemen proyek. Saya berharap dapat mengaplikasikan pengetahuan yang saya dapatkan dalam pembuatan proyek-proyek yang bermanfaat.</p>
-                </li>
-                <li>
-                    <p>Saya juga berharap bahwa selama berkuliah, saya dapat mengembangkan keterampilan pengelolaan waktu saya dengan lebih baik. Dengan demikian, saya dapat menyelesaikan tugas-tugas kuliah dengan efisien dan memiliki waktu luang untuk berbagai kegiatan ekstrakurikuler yang memperkaya pengalaman belajar saya.</p>
-                </li>
-                <li>
-                    <p>Saya menyadari bahwa perjalanan kuliah tidak selalu mulus, namun saya berharap dapat menghadapi tantangan dengan penuh kesabaran dan ketelitian. Saya ingin memanfaatkan setiap kesempatan untuk belajar dan berkembang, baik dalam mengatasi kesulitan akademis maupun menghadapi situasi di luar kelas.</p>
-                </li>
-            </ul>
-            
-
+        <div class="carousel_btn-container">
+          <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-    </section>
-    <section id="maps">
-        <div class="container">
-            <h2>Maps</h2>
-            <div class="container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.330463055915!2d107.57845487403449!3d-6.850932867021044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6ac1302ac69%3A0x871861c681107bef!2sJl.%20Ciwaruga%20No.17%2C%20Ciwaruga%2C%20Kec.%20Parongpong%2C%20Kabupaten%20Bandung%20Barat%2C%20Jawa%20Barat%2040559!5e0!3m2!1sid!2sid!4v1709047819291!5m2!1sid!2sid"></iframe>     
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row info_form_social_row">
+        <div class="col-md-4 col-lg-3">
+
+          <div class="social_box">
+            <a href="https://www.facebook.com/fitri.salwaa169?mibextid=I4yVpOFgxaOEidVT">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/xtyawas?t=SEbcgPQccDoAHiAMXVEv1w&s=09">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/ftrslwa_?igsh=ZXVndXl6cjBweWU1">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/pworrins">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row info_main_row">
+        <div class="col-md-6 col-lg-3">
+          <div class="info_links">
+            <h4>
+              Menu
+            </h4>
+            <div class="info_links_menu">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="blog.html">Video</a>
             </div>
-           
-          
+          </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <h3>Follow Me</h3>
-                <ul class="social-links">
-                    <li><a href="https://www.instagram.com/ftrslwa_?igsh=ZXVndXl6cjBweWU1" target="_blank">
-                        <img src="img/ig.jpeg" alt="Instagram" style="border-radius: 20px; height: 30px;">
-                    </a></li>
-
-                    <li><a href="https://twitter.com/xtyawas?t=SEbcgPQccDoAHiAMXVEv1w&s=09" target="_blank">
-                        <img src="img/x.png" alt="Twit" style="border-radius: 20px;height: 30px;">
-                    </a></li>
-                    <li><a href="https://www.facebook.com/fitri.salwaa169?mibextid=I4yVpOFgxaOEidVT" target="_blank">
-                        <img src="img/fb.png" alt="Twit" style="border-radius: 20px;height: 30px;">
-                    </a></li>
-                    <li><a href="https://github.com/pworrins" target="_blank">
-                        <img src="img/git.png" alt="Twit" style="border-radius: 20px;height: 30px;">
-                    </a></li>
-                </ul>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Umiez .</p>
-            </div>
+        <div class="col-md-6 col-lg-3">
+          <h4>
+            Contact Us
+          </h4>
+          <div class="info_contact">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <span>
+              Location
+            </span>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.330463055915!2d107.57845487403449!3d-6.850932867021044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6ac1302ac69%3A0x871861c681107bef!2sJl.%20Ciwaruga%20No.17%2C%20Ciwaruga%2C%20Kec.%20Parongpong%2C%20Kabupaten%20Bandung%20Barat%2C%20Jawa%20Barat%2040559!5e0!3m2!1sid!2sid!4v1709047819291!5m2!1sid!2sid"></iframe>                 
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                0881022428594
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope"></i>
+              <span>
+                fitri.salwa.tif423.polban.ac.id
+              </span>
+            </a>
+          </div>
         </div>
-    </footer>
-    
-    
-</div>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/main.js"></script>
-    <script>
-        let lastScrollTop = 0; // Variabel untuk menyimpan posisi scroll terakhir
-        const navbar = document.querySelector('nav'); // Mengambil elemen navbar
-    
-        window.addEventListener('scroll', function() {
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    
-            if (currentScroll > lastScrollTop) {
-                // Scroll ke bawah
-                navbar.style.top = '-120px'; // Sesuaikan dengan tinggi navbar Anda
-            } else {
-                // Scroll ke atas
-                navbar.style.top = '0';
-            }
-            lastScrollTop = currentScroll;
-        });
-    </script>
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p >
+         &copy; <span id="displayYear">
+        </span> 
+         Fitri Salwa
+         <i class="fa fa-heart-o" aria-hidden="true"></i>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
 </body>
 
 </html>
