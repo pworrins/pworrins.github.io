@@ -16,101 +16,127 @@ body {
   100% {background-color: #FDEBD0;} /* Yellow pastel */
 }
 
+/* Untuk membuat latar belakang responsif */
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: cover; /* Mengisi layar dengan latar belakang */
+    background-repeat: no-repeat; /* Jangan mengulang latar belakang */
+    background-attachment: fixed; /* Tetapkan latar belakang saat scrolling */
+  }
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /*navbar*/
 nav {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
   background-color: #E9F0EB;
   justify-content: flex-start;
-  height: 50px;
   align-items: center;
   color: whitesmoke;
   z-index: 1000;
-  padding-left: 50px; /* Menambahkan jarak dari tepi kiri */
+  padding-left: 20px; /* Mengurangi jarak dari tepi kiri */
+  padding-right: 20px; /* Mengurangi jarak dari tepi kanan */
+  height: 50px; /* Tinggi navbar */
 }
-
-
 
 nav ul {
   display: flex;
   list-style: none;
-  width: 70%;
-  justify-content: space-between;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%; /* Lebar ul diatur ke 100% agar mengisi navbar */
+  justify-content: space-around; /* Menyusun item-menu dengan jarak yang sama */
+  padding: 0; /* Menghapus padding default */
 }
 
+/* Mengubah tata letak ul saat tampilan pada perangkat seluler */
+@media only screen and (max-width: 600px) {
+  nav {
+    padding-left: 10px; /* Mengurangi jarak dari tepi kiri */
+    padding-right: 10px; /* Mengurangi jarak dari tepi kanan */
+    height: 60px; /* Menambah tinggi navbar untuk ruang yang lebih besar */
+  }
+
+  nav ul {
+    flex-direction: column; /* Menyusun item-menu secara vertikal */
+    align-items: center; /* Pusatkan item-menu secara horizontal */
+    padding-top: 10px; /* Menambah jarak di atas item-menu */
+  }
+}
+
+
 nav .logo {
-  width: 100%;
-  height: auto;
-  max-width: 100px;
+  width: auto; /* Menggunakan lebar asli gambar */
+  height: auto; /* Menggunakan tinggi asli gambar */
+  max-width: 150px; /* Batasan lebar maksimum */
   display: block;
-  margin-left: 5px;
-  margin-right: auto;
+  margin: 0 auto; /* Membuat logo terpusat secara horizontal */
+  border-radius: 50%; /* Memberikan efek sudut melengkung */
+  border: 2px solid #fff; /* Garis putih untuk memberi kontras */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Bayangan halus */
+  transition: transform 0.3s ease; /* Efek transisi ketika logo dihover */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Perbesar gambar saat dihover */
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #7f8c8d; /* Warna abu-abu pastel */
-  font-size: 0.9rem;
+  color: #666262; 
+  padding-left: 50px;
 }
 
 nav ul li a:hover {
-  color: #3498db; /* Warna biru pastel saat hover */
+  color: #616d75; /* Warna biru pastel saat hover */
 }
-  /* hamburger menu */
-  .menu-toggle{
-    display: none; 
-    flex-direction: column;
-    height: 17px;
-    justify-content: space-between;
-    position: relative;
- }
- .menu-toggle input{
-     position: absolute;
-     top:-5px;
-     left:-3px;
-     width:21px;
-     height: 21px;
-     opacity: 0;
-     cursor: pointer;
-     z-index: 2;
- }
- .menu-toggle span{
-     display: block;
-     width: 21px;
-     height: 2px;
-     background-color: whitesmoke;
-     border-radius: 3px;
-     transition: all 0.7s;
- }
+  /* Tombol hamburger menu */
+.menu-toggle {
+  display: block; /* Menampilkan tombol hamburger */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+  background: transparent; /* Menghilangkan latar belakang */
+  border: none; /* Menghilangkan border */
+  padding: 5px; /* Padding untuk meningkatkan area klik */
+  position: relative; /* Menjadikan posisi tombol relatif */
+}
 
-   /*x on hamburger menu*/
-   .menu-toggle span:nth-child(2){
-    transform-origin: left center;
-  }
-  
-  .menu-toggle span:nth-child(4){
-    transform-origin: left center;
-  }
-  
-  .menu-toggle input:checked ~ span:nth-child(2){
-    transform: rotate(45deg) ;
-  }
-  
-  .menu-toggle input:checked ~ span:nth-child(4){
-    transform: rotate(-45deg) ;
-  }
-  /* invis span ke 2 / child ke 3 */
-  .menu-toggle input:checked ~ span:nth-child(3){
-    width: 0%;
-    opacity: 0;
-    transition: .1s
-  }
+/* Garis hamburger */
+.menu-toggle .line {
+  width: 25px; /* Panjang garis hamburger */
+  height: 3px; /* Ketebalan garis hamburger */
+  background-color: #7f8c8d; /* Warna abu-abu pastel */
+  margin: 4px auto; /* Margin agar garis berjarak secara merata */
+  transition: all 0.3s ease; /* Transisi perubahan warna saat dihover */
+}
+
+/* Efek hover pada garis hamburger */
+.menu-toggle:hover .line {
+  background-color: #3498db; /* Warna biru pastel saat hover */
+}
+
+/* Animasi untuk transisi garis hamburger */
+.menu-toggle.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 
   .image {
    
@@ -122,24 +148,82 @@ nav ul li a:hover {
     margin-right: auto;
 }
 
+/* Container */
 .container {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #D5F5E3; /* Ubah warna border menjadi warna pastel */
-  padding: 8px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #D5F5E3;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Container Galeri */
+.container-gallery {
+  max-width: 90%;
+  margin: 10px auto; /* Tambahkan sedikit margin atas dan bawah */
+  padding: 20px;
+  border: 2px solid #60AD77;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Background Image Home */
+.container-background {
+  background-image: url('bg.jpg'); /* Ganti 'background.jpg' dengan nama file gambar latar belakang Anda */
+  background-size: cover; /* Penyesuaian ukuran gambar */
+  background-position: center; /* Posisi gambar */
+  padding: 50px; /* Ruang bawah agar konten terlihat lebih baik */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Gambar di dalam Container */
+.container img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
   border-radius: 5px;
-  margin: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Tambahkan shadow dengan warna pastel */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; /* Animasi transform */
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated-text {
+  animation-name: slideInRight;
+  animation-duration: 1s; /* Durasi animasi */
+  animation-delay: 0.5s; /* Delay sebelum animasi dimulai */
+  animation-fill-mode: both; /* Menjaga gaya akhir animasi */
 }
 
 
-.container-galery {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #60AD77;
-  padding: 8px;
-  border-radius: 5px;
-  margin: 10px;
+.container img:hover {
+  transform: scale(1.05); /* Efek scaling saat kursor mengarah ke gambar */
+}
+
+/* Atur tampilan untuk tampilan mobile */
+@media screen and (max-width: 768px) {
+  .container, .container-gallery, .container-background {
+    padding: 15px; /* Ubah padding agar sesuai dengan tampilan layar yang lebih kecil */
+  }
+}
+
+/* Gaya untuk perangkat seluler */
+@media screen and (max-width: 768px) {
+  .container,
+  .container-gallery {
+    margin: 5px; /* Mengurangi margin untuk layar kecil */
+    padding: 5px; /* Mengurangi padding untuk layar kecil */
+  }
 }
 
 .profil {
@@ -336,17 +420,18 @@ footer {
   }
   
 table {
-    width: 50%; /* Lebar tabel */
+    width: 100%; /* Lebar tabel */
     border-collapse: collapse;
     margin: auto ;
     background-color: #fff; /* Warna background tabel */
     border-radius: 8px; /* Sudut melengkung tabel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan tabel */
-
+    overflow-x: auto;
 }
 
 th, td {
-    padding: 12px;
+    font-size: 14px;
+    padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd; /* Garis pemisah */
 }
@@ -363,15 +448,15 @@ tr:nth-child(even) {
 .teknis {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  width: 200px; /* Atur lebar sesuai kebutuhan */
+  align-items: center; /* Memusatkan secara horizontal */
+  justify-content: center; /* Memusatkan secara vertical */
+  width: 50%; /* Lebar 50% dari parent element */
+  max-width: 300px; /* Lebar maksimum */
   padding: 20px;
-  margin: 10px;
-  border: 1px solid #ccc; /* Atur warna dan ketebalan garis sesuai kebutuhan */
-  border-radius: 20px; /* Atur sudut melengkung */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Tambahkan bayangan */
+  margin: 10px auto; /* Center secara horizontal */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .teknis img {
@@ -392,4 +477,75 @@ tr:nth-child(even) {
   font-size: 14px;
   color: #888; /* Warna untuk persentase */
 }
+
+.container-gege {
+  max-width: 100%; /* Gambar tidak melebihi lebar kontainer */
+  height: auto; /* Gambar tetap proporsional */
+  display: block; /* Menghilangkan spasi di sekitar gambar */
+  margin: auto; /* Memposisikan gambar ke tengah */
+  border-radius: 10px; /* Sudut melengkung pada gambar */
+  transition: transform 0.3s ease; /* Animasi transisi ketika gambar dihover */
+}
+
+.container-gege:hover {
+  transform: scale(1.1); /* Memperbesar gambar saat dihover */
+}
+
+
+.container-video {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporsi 16:9: 9/16 = 0.5625 */
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px; /* Sudut melengkung untuk tampilan yang lebih menarik */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan video */
+}
+
+.container-video iframe,
+.container-video object,
+.container-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* Sudut melengkung untuk tampilan yang lebih menarik */
+}
+
+/* Media query untuk perangkat mobile */
+@media only screen and (max-width: 600px) {
+  .container-video {
+    padding-bottom: 75%; /* Mengubah proporsi untuk perangkat mobile */
+    border-radius: 0; /* Menghapus sudut melengkung untuk tampilan yang lebih bersih */
+    box-shadow: none; /* Menghapus bayangan pada perangkat mobile */
+  }
+}
+
+.map-container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 75%; /* Proporsi 4:3: 3/4 = 0.75 */
+  height: 0;
+  border-radius: 10px; /* Sudut melengkung */
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Menghapus border iframe */
+  border-radius: 10px; /* Sudut melengkung */
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    padding-top: 75%; /* Proporsi 4:3: 3/4 = 0.75 */
+  }
+}
+
+
+
 
