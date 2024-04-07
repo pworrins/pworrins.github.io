@@ -27,7 +27,48 @@
 </head>
 
 <body>
+  <h1 style="text-align: center;">Berita Terkini Republika</h1>
+  <div id="table-container"></div>
 
+  <button id="run-workflow-button">Run Workflow</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function createTable(data) {
+      let table = '<table>';
+      table += '<thead><tr><th>No</th><th>Judul</th><th>Kategori</th><th>Waktu Terbit</th><th>Waktu Scrapping</th></tr></thead>';
+      table += '<tbody>';
+
+      data.forEach((item, index) => {
+        table += '<tr>';
+        table += '<td>' + (index + 1) + '</td>';
+        table += '<td>' + '<a href="' + item['Link Berita'] + '">' + item.judul + '</a>' + '</td>';
+        table += '<td>' + item.kategori + '</td>';
+        table += '<td>' + item.waktu + '</td>';
+        table += '<td>' + item['waktu scraping'] + '</td>';
+        table += '</tr>';
+      });
+
+      table += '</tbody></table>';
+      return table;
+    }
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.getJSON('republika_scraped_data.json', function(data) {
+        // Menangani data JSON
+        console.log(data);
+        // Menampilkan data berita
+        data.forEach(function(berita) {
+          $('#news-container').append('<div><h2>' + berita.judul + '</h2><p>' + berita.isi + '</p></div>');
+        });
+      })
+      .fail(function(jqXHR, textStatus, errorThrown) {
+        console.log('Error: ' + textStatus + ' - ' + errorThrown);
+      });
+    });
+  </script>
+  
   <!-- header section strats -->
   <header class="header_section innerpage_header">
     <div class="container-fluid">
