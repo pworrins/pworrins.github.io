@@ -1,34 +1,41 @@
 import requests # type: ignore
-import json
 from bs4 import BeautifulSoup # type: ignore
+import json
 from datetime import datetime
 
-URL = "https://www.republika.co.id/"
-page = requests.get(URL)
+def scrape_website(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    articles = []
+    for item in soup.find_all('li', class_='list-group-item'):
+        category_element = item.find('span', class_='kanal-info')
+        title_element = item.find('h3')
+        date_element = item.find('div', class_='date')
 
-soup = BeautifulSoup(page.content, "html.parser")
+        if category_element and title_element and date_element:
+            category = category_element.text.strip()
+            title = title_element.text.strip()
+            publish_time = date_element.text.strip().split('-')[-1].strip()
+            # Ambil link dari judul
+            link = item.find('a')['href']
+            articles.append({
+                'judul': title,
+                'kategori': category,
+                'waktu_publish': publish_time,
+                'waktu_scraping': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'url': link  # Tambahkan link ke dalam data artikel
+            })
+    
+    return articles
 
-data = []
-list_judul = []
+def save_to_json(data):
+   with open('republika_scraped_data.json', 'w') as json_file:
+        json.dump(data, json_file, indent=4)
 
-for obj in soup.find_all("div", class_="caption"):
-    temp_tglTerbit = obj.find("div", class_='date')
-    temp_Judul = obj.find("h3")
-    if temp_Judul is not None and temp_tglTerbit is not None:
-        temp_tglTerbit = temp_tglTerbit.text
-
-        temp_kategori = temp_tglTerbit[0:temp_tglTerbit.find(' -')]
-        temp_kategori = temp_kategori.strip()
-
-        temp_tglTerbit = temp_tglTerbit[temp_tglTerbit.find('- ') + 2:]
-        temp_tglTerbit = temp_tglTerbit.strip()
-
-        temp_Judul = temp_Judul.find("span")
-        temp_Judul_text = temp_Judul.text
-        temp_Judul_link = temp_Judul.find_parent("a")["href"]  # Ambil URL dari link judul
-
-        data.append({"judul": temp_Judul_text, "kategori": temp_kategori, "waktu publish": temp_tglTerbit,
-                     "waktu scrape": datetime.now().strftime('%a %d %b %Y, %H:%M'), "url": temp_Judul_link})
-
-with open('republika_scraped_data.json', 'w') as f:
-    json.dump(data, f, indent=2)
+if __name__ == "__main__":
+    url = 'https://www.republika.co.id/'
+    articles = scrape_website(url)
+    print("Selesai scraping")
+    save_to_json(articles)
+    print("Data disimpan dalam format JSON")
