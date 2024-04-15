@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Site Metas -->
-    <link rel="icon" href="images/logo.png" type="image/gif" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-  
-    <title>Portopolio Fitri Salwa</title>
-  
-    <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
-    <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/table.css">
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/logo.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Portopolio Fitri Salwa</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/table.css" rel="stylesheet">
 </head>
 <body>
   <!-- header section strats -->
@@ -35,6 +36,7 @@
           </span>
         </a>
         <div class="" id="">
+
           <div class="custom_menu-btn">
             <button onclick="openNav()">
               <span class="s-1"> </span>
@@ -45,7 +47,7 @@
               <div class="overlay-content">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
+                <a href="blog.html">Video</a>
               </div>
             </div>
           </div>
@@ -55,13 +57,39 @@
     </div>
   </header>
   <!-- end header section -->
-
-  <h1 style="text-align: center;">Berita Terkini Republika</h1>
-  <div id="table-container"></div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/js/table.js"></script>
-   <!-- info section -->
-   <section class="info_section layout_padding2">
+    <div class="container">
+      <h1 style="text-align: center;">Berita Terkini Republika</h1>
+        <table id="jsonTable" border="1">
+            <thead>
+                <tr>
+                    <th>Judul</th>
+                    <th>Kategori</th>
+                    <th>Waktu Publish</th>
+                    <th>Waktu Scraping</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.getJSON("republika_scraped_data.json", function(data){
+                $.each(data, function(index, item){
+                    var row = "<tr>";
+                    row += "<td>" +'<a href="' + item.url + '">'+ item.judul + "</td>";
+                    row += "<td>" + item.kategori + "</td>";
+                    row += "<td>" + item.waktu_publish + "</td>";
+                    row += "<td>" + item.waktu_scraping + "</td>";
+                    row += "</tr>";
+                    $("#jsonTable tbody").append(row);
+                });
+            });
+        });
+    </script>
+    <!-- info section -->
+  <section class="info_section layout_padding2">
     <div class="container">
       <div class="row info_form_social_row">
         <div class="col-md-4 col-lg-3">
@@ -146,6 +174,6 @@
   <script src="js/bootstrap.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
-
+    
 </body>
 </html>
