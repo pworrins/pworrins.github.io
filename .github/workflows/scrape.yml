@@ -13,7 +13,7 @@ jobs:
       run: sudo timedatectl set-timezone Asia/Jakarta
     
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3 # Menggunakan versi terbaru dari actions/checkout
 
     - name: Set up Python
       uses: actions/setup-python@v2
