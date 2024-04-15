@@ -8,8 +8,8 @@ function createTable(data) {
       table += '<td>' + ++i + '</td>';
       table += '<td>' + '<a href="' + item.url + '">' + item.judul + '</a>' + '</td>';
       table += '<td>' + item.kategori + '</td>';
-      table += '<td>' + item['waktu publish'] + '</td>';
-      table += '<td>' + item['waktu scrape'] + '</td>';
+      table += '<td>' + item.waktu_publish+ '</td>';
+      table += '<td>' + item.waktu_scraping + '</td>';
       table += '</tr>';
     });
     table += '</tbody></table>';
