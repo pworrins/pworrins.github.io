@@ -1,0 +1,37 @@
+name: Web Scraping
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' 
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set Timezone
+      run: sudo timedatectl set-timezone Asia/Jakarta
+    
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4
+
+    - name: Run Web Scraping Script
+      run: python bss.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name "pworrins"
+        git config --global user.email "ftrslwa8@gmail.com"
+        git add .
+        git commit -m "Update republika_scraped_data.json" || echo "No changes to commit"
+        git push

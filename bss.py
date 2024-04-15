@@ -16,6 +16,7 @@ def scrape_website(url):
         if category_element and title_element and date_element:
             category = category_element.text.strip()
             title = title_element.text.strip()
+<<<<<<< HEAD
             
             # Periksa apakah ada teks pada elemen tanggal
             if date_element.text.strip():
@@ -26,6 +27,11 @@ def scrape_website(url):
             # Ambil link dari judul
             link = item.find('a')['href']
             
+=======
+            publish_time = date_element.text.strip().split('-')[-1].strip()
+            # Ambil link dari judul
+            link = item.find('a')['href']
+>>>>>>> 3b9dd31908d8bf034242bbc670fc011c909e2bcc
             articles.append({
                 'judul': title,
                 'kategori': category,
